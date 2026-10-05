@@ -1,0 +1,50 @@
+{
+  "_note": "FICTIONAL, DEMO ONLY. Loonstone Trust and Alex Carrow do not exist. This is the synthetic customer record the agent reads; every figure the agent says is checked against it.",
+  "record_version": "2.0",
+  "as_of": "2026-10-04",
+  "currency": "EUR",
+  "borrower": {
+    "name": "Alex Carrow",
+    "account_number": "LT-5520-3371-08",
+    "language": "en",
+    "segment_flags": {
+      "vulnerable": false,
+      "arrears": false,
+      "forbearance": false
+    }
+  },
+  "verification": {
+    "date_of_birth": "1984-03-12",
+    "address_first_line": "14 Harbour View"
+  },
+  "current_mortgage": {
+    "product": "5-year fixed",
+    "rate_percent": 4.15,
+    "outstanding_balance_amount": 285400.00,
+    "remaining_term_years": 20,
+    "monthly_payment_amount": 1752.11,
+    "maturity_date": "2027-01-26"
+  },
+  "renewal_offer": {
+    "source": "pricing API, read-only",
+    "offer_expiry_date": "2026-12-26",
+    "reason_categories": [
+      "loan-to-value band",
+      "remaining term",
+      "repayment history with Loonstone Trust"
+    ],
+    "options": [
+      {"term": "5-year fixed", "rate_percent": 3.65, "monthly_payment_amount": 1677.29},
+      {"term": "3-year fixed", "rate_percent": 3.80, "monthly_payment_amount": 1699.54}
+    ],
+    "fees": "No fee to renew, and no fee to switch between the two offered terms before the offer expires.",
+    "if_nothing_chosen_by_maturity": "The mortgage moves to the standard variable rate, currently 4.95%, with a monthly payment of 1,875.64. The customer can still choose a fixed term later.",
+    "how_to_accept": "The customer accepts in writing, in their own time, from the offer pack. The agent never accepts or binds a renewal on the call.",
+    "human_review": "The customer can ask for a person to review how the rate was set."
+  },
+  "early_repayment_charge": {
+    "amount": 4210.55,
+    "as_of": "2026-10-04",
+    "method": "Recalculated daily. The written quote is authoritative."
+  }
+}

@@ -1,0 +1,49 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node (console)
+node_modules/
+.next/
+out/
+
+# Local service data (Docker volumes, recordings, raw traces)
+data/
+!agent/data/
+recordings/
+*.wav
+*.mp3
+*.log
+
+# Word lock files
+~$*.docx
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Code-only repo: keep docs, evidence, media and archives local
+archive/
+evidence/
+docs/
+youtube playlist/
+governance/*.html
+*.docx
+*.mp4
+
+# Doc page builders (write into docs/, kept local)
+scripts/build_*.py

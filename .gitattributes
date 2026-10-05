@@ -1,0 +1,4 @@
+# Keep LF everywhere so hashes of committed files stay the same on any checkout
+* text=auto eol=lf
+*.docx binary
+*.png binary

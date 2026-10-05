@@ -1,0 +1,17 @@
+# Loonstone Trust LiveKit dev server: ws://localhost:7880.
+name: loonstone-livekit
+
+services:
+  livekit:
+    image: livekit/livekit-server:v1.9.1@sha256:c039a1bfa154c8479ac369c380665638e92a7e9531e69664549c0c0d3eb65e63
+    restart: unless-stopped
+    # --dev keeps the single-port dev RTC setup; LIVEKIT_KEYS replaces its fixed
+    # "devkey"/"secret" with the generated key in infra/.env. node-ip lets the
+    # host browser reach WebRTC.
+    command: --dev --bind 0.0.0.0 --node-ip 127.0.0.1
+    environment:
+      LIVEKIT_KEYS: "${LIVEKIT_API_KEY:?set in infra/.env}: ${LIVEKIT_API_SECRET:?set in infra/.env}"
+    ports:
+      - 127.0.0.1:7880:7880
+      - 127.0.0.1:7881:7881
+      - 127.0.0.1:7882:7882/udp
