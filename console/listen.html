@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Loonstone Trust — call listener</title>
-<!-- Call listener for AIS-014 Renewal Assist: hear a simulated renewal call and read
+<!-- Call listener for UC-1 Mortgage Renewal Agent: hear a simulated renewal call and read
      the live transcript. Opened by agent/start_call.py with a listen-only token in
      the URL fragment. The transcript comes from the renewal agent only: its own words
      exactly as it spoke them, and the borrower's words as the agent heard them.
@@ -204,7 +204,7 @@
       <h2>On the call</h2>
       <div class="person agent absent" id="p-agent">
         <span class="avatar">AI</span>
-        <span><b>Renewal Assist</b><small id="agent-version">AI agent · AIS-014</small></span>
+        <span><b>Mortgage Renewal Agent</b><small id="agent-version">AI agent · UC-1</small></span>
         <span class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       </div>
       <div class="person borrower absent" id="p-borrower">
@@ -294,7 +294,7 @@ $("join").onclick = async (ev) => {
     $("p-agent").classList.toggle("absent", !roles.includes("renewal-agent"));
     const agent = [...room.remoteParticipants.values()].find((p) => (p.attributes || {})["loonstone.role"] === "renewal-agent");
     const version = agent && agent.attributes["loonstone.agent_version"];
-    if (version) $("agent-version").textContent = "AI agent · AIS-014 · " + version;
+    if (version) $("agent-version").textContent = "AI agent · UC-1 · " + version;
     $("p-borrower").classList.toggle("absent", !roles.includes("borrower-sim"));
   };
 
@@ -330,7 +330,7 @@ $("join").onclick = async (ev) => {
       el.innerHTML = `<span class="t"></span><span class="who"></span><p class="text"></p>`;
       el.querySelector(".t").textContent = clock(Date.now() - joinedAt);
       el.querySelector(".who").innerHTML = role === "agent"
-        ? "Renewal Assist <em>AI · exact words</em>"
+        ? "Mortgage Renewal Agent <em>AI · exact words</em>"
         : "Borrower <em>simulated · as the assistant heard it</em>";
       log.appendChild(el);
       segments.set(id, el);

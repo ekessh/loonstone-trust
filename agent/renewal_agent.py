@@ -1,4 +1,4 @@
-"""AIS-014 Renewal Assist: the outbound renewal voice agent. FICTIONAL BANK, DEMO ONLY.
+"""UC-1 Mortgage Renewal Agent: the outbound renewal voice agent. FICTIONAL BANK, DEMO ONLY.
 
 Claude Sonnet 5 for dialogue, Deepgram Flux for speech-to-text and text-to-speech,
 traced to Langfuse with personal data redacted (agent/telemetry.py).
